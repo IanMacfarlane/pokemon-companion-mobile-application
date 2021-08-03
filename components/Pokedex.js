@@ -10,6 +10,7 @@ class Pokedex extends Component {
 
 	render () {
 
+		// TODO game select, or national dex, regions withing sword-shield and x-y, multiple forms
 		let game = 'firered-leafgreen';
 
 		let pokedex = this.props.pokemonData.games[game].pokemon.map((pokemon) =>

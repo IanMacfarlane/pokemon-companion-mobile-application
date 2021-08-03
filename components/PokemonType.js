@@ -75,10 +75,13 @@ class PokemonType extends Component {
 				borderRadius: 10,
 				alignItems: 'center',
 				justifyContent: 'center',
-				width: 80,
+				width: 110,
 				height: 30,
 			}}>
-				<Text style={{color: '#fff'}}>{this.props.type.toUpperCase()}</Text>
+				<Text style={{
+					color: '#fff',
+					fontSize: 20,
+				}}>{this.props.type.toUpperCase()}</Text>
 			</View>
 		);
 	}

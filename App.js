@@ -4,6 +4,8 @@ import { StatusBar } from 'expo-status-bar';
 import pokemonData from './assets/pokemonData.json';
 import Pokedex from './components/Pokedex';
 
+// TODO multiple region pokedexes, regional pokemon, multiple form pokemon
+
 class App extends Component {
 	state = { pokemonData: pokemonData };
 
@@ -26,6 +28,7 @@ const styles = StyleSheet.create({
 	},
 	background: {
 		backgroundColor: '#222',
+		fontSize: 40,
 	},
 });
 
