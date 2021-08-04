@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View, ScrollView, FlatList } from 'react-native';
 import PokedexPokemonListing from './PokedexPokemonListing';
+import { OptimizedFlatList } from 'react-native-optimized-flatlist';
 
 // TODO Game select, region select for sword-shield, x-y
 // TODO regional pokemon for sword-shield, x-y, sun-moon, ultra-sun-ultra-moon
@@ -70,6 +71,9 @@ constructor(props) {
 					keyExtractor={item => item}
 					style={{height: 645}}
 					contentContainerStyle={{paddingBottom: 10}}
+					updateCellsBatchingPeriod={10}
+					maxToRenderPerBatch={50}
+					initialNumToRender={50}
 				/>
 			</View>
 		);
