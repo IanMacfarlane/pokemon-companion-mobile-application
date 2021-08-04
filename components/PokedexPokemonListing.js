@@ -5,6 +5,7 @@ import PokemonType from './PokemonType';
 // TODO regional pokedex, number, types, artwork
 // TODO text color
 // TODO on click open pokemon
+// TODO caught indicator
 
 class PokedexPokemonListing extends Component {
 

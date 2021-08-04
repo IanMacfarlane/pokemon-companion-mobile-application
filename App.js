@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import Pokedex from './components/Pokedex';
 import pokemonData from './assets/pokemonData.json';
@@ -22,14 +22,21 @@ import pokemonArtworks from './assets/images/pokemonArtworks.js';
 
 // TODO Type Chart
 
+// TODO may need to adjust styling to fit different sized screens
+// my screen is 360x700
+
 class App extends Component {
 	state = { pokemonData: pokemonData };
 
 	render() {
 
 		return (
-			<View style={styles.background}>
-				<View style={styles.content}>
+			<View style={{
+				backgroundColor: '#222',
+			}}>
+				<View style={{
+					marginTop: 25,
+				}}>
 					<Pokedex 
 						pokemonData={this.state.pokemonData}
 						pokemonArtworks={pokemonArtworks}
@@ -40,15 +47,5 @@ class App extends Component {
 		);
 	}
 }
-
-const styles = StyleSheet.create({
-	content: {
-		marginTop: 25,
-	},
-	background: {
-		backgroundColor: '#222',
-		fontSize: 40,
-	},
-});
 
 export default App;
