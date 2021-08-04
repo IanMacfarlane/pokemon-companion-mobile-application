@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { Text, View, Image } from 'react-native';
 import PokemonType from './PokemonType';
-import images from '../assets/images/images.js';
+
+// TODO regional pokedex, number, types, artwork
+// TODO text color
+// TODO on click open pokemon
 
 class PokedexPokemonListing extends Component {
 
@@ -34,12 +37,6 @@ class PokedexPokemonListing extends Component {
 	}
 
 	render () {
-
-		// TODO regional pokedex number and data formatting for some games
-		// TODO pokemon image
-		// TODO text color
-		// TODO format ui
-		// TODO on click open pokemon data view
 
 		let pokemonTypes = this.state.types.map((type) =>
 			<PokemonType key={type} type={type}/>
@@ -82,7 +79,7 @@ class PokedexPokemonListing extends Component {
 						{pokemonTypes}
 					</View>
 				</View>
-				<Image source={images[this.props.pokemon]} style={{
+				<Image source={this.props.pokemonArtwork} style={{
 					height: 70,
 					width: 70,
 				}}/>

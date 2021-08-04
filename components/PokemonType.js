@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
 
+// TODO virtical orientation for type chart
+
 class PokemonType extends Component {
 
 	constructor(props) {

@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import PokedexPokemonListing from './PokedexPokemonListing';
 
-class Pokedex extends Component {
+// TODO Game select, region select for sword-shield, x-y
 
-	constructor(props) {
+class Pokedex extends Component {
+constructor(props) {
 		super(props);
 	}
 
 	render () {
 
-		// TODO game select, or national dex, regions withing sword-shield and x-y, multiple forms
 		let game = 'firered-leafgreen';
 
 		let pokedex = this.props.pokemonData.games[game].pokemon.map((pokemon) =>
@@ -19,6 +19,7 @@ class Pokedex extends Component {
 				pokemon={pokemon}
 				game={game}
 				pokemonData={this.props.pokemonData.pokemon[pokemon]}
+				pokemonArtwork={this.props.pokemonArtworks[pokemon]}
 			/>
 		);
 
@@ -30,7 +31,6 @@ class Pokedex extends Component {
 	}
 }
 
-// TODO paddingBottom does not work for some reason
 const styles = StyleSheet.create({
 	pokemonList: {
 		paddingBottom: 10,

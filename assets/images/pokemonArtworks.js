@@ -1,4 +1,4 @@
-const images = {
+const pokemonArtworks = {
 	'abomasnow': require('./abomasnow.png'),
 	'abra': require('./abra.png'),
 	'absol': require('./absol.png'),
@@ -890,4 +890,4 @@ const images = {
 	'zygarde': require('./zygarde.png'),
 }
 
-export default images;
+export default pokemonArtworks;
