@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, ScrollView } from 'react-native';
+import { Text, View, ScrollView, FlatList } from 'react-native';
 import PokedexPokemonListing from './PokedexPokemonListing';
 
 // TODO Game select, region select for sword-shield, x-y
@@ -11,19 +11,35 @@ constructor(props) {
 		super(props);
 
 		this.state = {
-			game: 'firered-leafgreen',// this will default to national
+			game: 'national',// this will default to national
 		}
 	}
 
 	render () {
 
-		let pokemonList = this.props.pokemonData.games[this.state.game].pokemon.map((pokemon) =>
+		/*let pokemonList = this.props.pokemonData.games[this.state.game].pokemon.map((pokemon) =>
 			<PokedexPokemonListing 
 				key={pokemon}
 				pokemon={pokemon}
 				game={this.state.game}
 				pokemonData={this.props.pokemonData.pokemon[pokemon]}
 				pokemonArtwork={this.props.pokemonArtworks[pokemon]}
+			/>
+		);*/
+
+		let pokemon;
+		let pokemonList = [];
+		for (pokemon in this.props.pokemonData.pokemon) {
+			pokemonList.push(pokemon);
+		}
+
+		let renderItem = ({ item }) => (
+			<PokedexPokemonListing 
+				key={item}
+				pokemon={item}
+				game={this.state.game}
+				pokemonData={this.props.pokemonData.pokemon[item]}
+				pokemonArtwork={this.props.pokemonArtworks[item]}
 			/>
 		);
 
@@ -48,16 +64,21 @@ constructor(props) {
 						}}>{this.state.game}</Text>
 					</View>
 				</View>
-				<ScrollView style={{
+				<FlatList 
+					data={pokemonList}
+					renderItem={renderItem}
+					keyExtractor={item => item}
+				/>
+			</View>
+		);
+	}
+}
+				/*<ScrollView style={{
 					height: 645,
 				}} contentContainerStyle={{
 					paddingBottom: 10,
 				}}>
 					{pokemonList}
-				</ScrollView>
-			</View>
-		);
-	}
-}
+				</ScrollView>*/
 
 export default Pokedex;
