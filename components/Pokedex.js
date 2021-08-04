@@ -68,6 +68,8 @@ constructor(props) {
 					data={pokemonList}
 					renderItem={renderItem}
 					keyExtractor={item => item}
+					style={{height: 645}}
+					contentContainerStyle={{paddingBottom: 10}}
 				/>
 			</View>
 		);
