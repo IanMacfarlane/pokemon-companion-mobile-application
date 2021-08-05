@@ -74,17 +74,11 @@ constructor(props) {
 					updateCellsBatchingPeriod={10}
 					maxToRenderPerBatch={50}
 					initialNumToRender={50}
+					windowSize={50}
 				/>
 			</View>
 		);
 	}
 }
-				/*<ScrollView style={{
-					height: 645,
-				}} contentContainerStyle={{
-					paddingBottom: 10,
-				}}>
-					{pokemonList}
-				</ScrollView>*/
 
 export default Pokedex;

@@ -55,6 +55,10 @@ class PokedexPokemonListing extends Component {
 				flexDirection: 'row',
 				justifyContent: 'space-between',
 			}}>
+				<Image source={this.props.pokemonArtwork} style={{
+					height: 70,
+					width: 70,
+				}}/>
 				<View>
 					<View style={{
 						flexDirection: 'row',
@@ -80,10 +84,6 @@ class PokedexPokemonListing extends Component {
 						{pokemonTypes}
 					</View>
 				</View>
-				<Image source={this.props.pokemonArtwork} style={{
-					height: 70,
-					width: 70,
-				}}/>
 			</View>
 		);
 	}
